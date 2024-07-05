@@ -1,0 +1,278 @@
+:root{
+	/*use 60 30 10 is advised*/
+	--primary-color-accent1: whitesmoke;
+	--primary-color-accent2: floralwhite;
+	--primary-color-accent3: rgb(244,244,232);
+	--secondary-color-accent1: rgb(20,115,79);
+	--secondary-color-accent2:;
+	--secondary-color-accent3:;
+	--tertiary-color-accent1: rgb(235,15,42);
+	--tertiary-color-accent2:;
+	--teritary-color-accent3: rgb(147,10,26);
+	
+
+}
+*{
+	box-sizing: border-box;
+}
+div.sec_div:not(.show){
+	display: none;
+}
+div.custom_console{
+	z-index: 2;
+
+	border-radius: 2px;
+	position: absolute;
+	display: none;
+	background-color: var(--primary-color-accent2);
+	top:0px;
+
+}
+div.custom_console > form.login_box{
+	margin:0px;
+}
+div.datetime:not(.show){
+	display: none !important;
+}
+div#username:not(.show){
+	display: none !important;
+}
+div.custom_console > form > label > p {
+	margin: 0px;
+	margin-left: 10px;
+}
+div.custom_console > div > p {
+	margin: 0px;
+	font-size:32px;
+}
+div.custom_console > div > p:hover {
+	cursor: pointer;
+}
+div.custom_console > div {
+	width: 100%;
+	border-bottom: solid 2px var(--primary-color-accent1);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding:15px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+}
+div.custom_console > form {
+	margin: 10px;
+	display: grid;
+}
+div.custom_console.show{
+	display: block;
+	top:initial;
+	animation: move_console .5s ease forwards;
+}
+
+@keyframes move_console{
+	0%{
+		transform: translate(0,-60vh);
+	}
+	100%{
+		transform: translate(0,0);
+	}
+}
+div#cover_console{
+	display: none;
+}
+div#cover_console.show{
+	display: block;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 1;
+	margin: 0px;
+	position: fixed;
+}
+
+.login_box{
+	margin-bottom: 0px;
+	border-radius: 10px;
+	padding: 20px;	
+	background-color: var(--primary-color-accent1);
+}
+.top_nav{
+	display:flex;
+	width: 100%;
+	justify-content: space-between;
+	background-color: var(--primary-color-accent1);
+	position: absolute;
+	top:0px;
+	padding:2vh;
+
+}
+.hot_box{
+	background-color: var(--primary-color-accent1);
+	width: 80%;
+}
+.login_button{
+	width: 21.3em;
+}
+.query_table{
+	display: flex;
+	justify-content: space-between;
+	margin: 1em;
+}
+.sec_div{
+		padding: 5%;
+}
+.main_div{
+	width: 90%;
+	background-color: var(--primary-color-accent1);
+	position: absolute;
+	top: 20vh;
+
+}
+
+.inside_tab{
+	display: flex;
+	justify-content: space-between;
+}
+#datetime{
+	font-family: "Rubik", sans-serif;
+}
+th, tr, td{
+	padding: 1.5em;
+	
+}
+td,tr{
+	border: 5px solid var(--primary-color-accent1);
+
+}
+tr:nth-child(even){
+	background-color: var(--primary-color-accent2);
+	color: var(--secondary-color-accent1);
+
+
+}
+tr:nth-child(odd){
+	background-color: var(--primary-color-accent3);
+	color:var(--secondary-color-accent1);
+}
+th{
+	border: 1px solid var(--primary-color-accent1);
+	border-bottom: 2px solid var(--secondary-color-accent1);
+	background-color: var(--primary-color-accent1);
+	
+}
+table{
+	width: 100%;
+	place-self: center;
+	border-collapse: collapse;
+	text-align: left;
+}
+#btn{
+	background-color: var(--secondary-color-accent1);
+	border:0px;
+	font-family: "Rubik", sans-serif;
+	margin: 10px;
+	color: var(--primary-color-accent1);
+	padding: 10px;
+	font-size: 1em;
+
+	
+}
+#btn:hover:not(.small_button){
+	cursor: pointer;
+	background-color: var(--primary-color-accent2);
+	color:var(--secondary-color-accent1);
+}
+#btn.small_button:hover {
+  cursor: pointer;
+}
+.small_button{
+	width: 50px;
+}
+#btn.remove{
+	 background-color: var(--teritary-color-accent3);
+}
+input{
+	border: 0px;
+	font-size: 1em;
+	margin: 10px;
+	padding: 10px;
+	font-family: "Rubik", sans-serif;
+	width: 20em;
+}
+body{
+	display: grid;
+	height: 100vh;
+	margin: 0px;
+	overflow-x: hidden;
+	place-items: center;
+	background: url(https://wallsdesk.com/wp-content/uploads/2016/10/Kuala-Lumpur-Wallpapers.jpg) no-repeat;
+	
+
+}
+
+h1 {
+	margin:0px;
+	font-family: "Rubik", sans-serif;
+	font-size: clamp(2em, 2vw, 4em);
+	padding: 20px;
+	text-align: center;
+	font-weight: 400;
+
+}
+
+h1,h2,h3,h4,h5,p{
+	font-family: "Rubik", sans-serif;
+	color: var(--secondary-color-accent1);
+}
+table{
+	font-size: 1em;
+	font-family: "Rubik", sans-serif;
+	margin:1em;
+}
+
+      .tab {
+        overflow: hidden;
+        border-bottom: 1px solid var(--secondary-color-accent1);
+        
+
+      }
+
+      /* Style the buttons inside the tab */
+      .tab button {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        color: var(--secondary-color-accent1);
+        border-bottom: 5px solid rgba(0, 0, 0, 0);
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        border-bottom: 5px solid var(--tertiary-color-accent1);
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+        border-bottom: 5px solid var(--tertiary-color-accent1);
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border-top: none;
+        
+      }
+      .tablinks{
+      	margin:0px;
+      }
+      /* Show the tab content */
+      .tabcontent.show {
+        display: grid;
+      }
+
