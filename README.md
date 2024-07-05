@@ -1,2 +1,1 @@
-# UniversityProject
-Project File from University Assigment
+Hello World! 
