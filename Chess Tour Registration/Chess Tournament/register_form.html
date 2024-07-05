@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up Form</title>
+    <link rel="stylesheet" href="register_form.css">
+    <script src="https://kit.fontawesome.com/64c073320b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+
+        <form NAME=CHESS_FORM method="post" id="ChessForm" onsubmit="return check();" action="login_function.php" >
+            <div class="input-group">
+
+                <div class="input-field" >
+                    <i class="fas fa-gamepad"></i>
+                    <input type="text" placeholder="IGN Name" name="ign_name" required>
+                </div>
+
+                <div class="input-field" id="nameField">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" name="name" required>
+                </div>
+
+                <div class="input-field" id="emailField">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" name="email" required>
+                </div>
+
+                <div class="input-field" id="phoneField">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="Phone Number" name="phone" required>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-key"></i>
+                    <input type="password" placeholder="Password" name="pass" required>
+                </div>
+
+                <div class="input-field" id="confirmField">
+                <i class="fa-solid fa-unlock-keyhole"></i>
+                    <input type="password" placeholder=" Confirm Password" name="retype" required>
+                </div>
+
+                <div class="btn-field">
+                    <button type="submit" id="signupBtn" onclick="prompt_form_button(0)">Sign Up</button>
+                    <button type="submit" id="signinBtn" class="disable" onclick="prompt_form_button(1)">Sign In</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+
+function check() {
+    if (document.CHESS_FORM.pass.value != document.CHESS_FORM.retype.value) {
+        alert("Password and Confirmed Password are not the same");
+        window.location.href = "register_form.html";
+        return false;
+    } else {
+        return true;
+    }
+}
+
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let emailField = document.getElementById("emailField");
+let phoneField = document.getElementById("phoneField");
+let confirmField = document.getElementById("confirmField");
+let title = document.getElementById("title");
+
+let prompted_num = 0;
+function prompt_form_button(prompt_num){
+    var form = document.getElementById("ChessForm");
+    prompt_num = parseInt(prompt_num);
+    if (prompted_num == prompt_num){
+        console.log("DEFINING VALUE IS FUN");
+        if(prompt_num == 0){
+
+            form.action = "registration_function.php";
+        }
+        else if(prompt_num == 1){
+            form.action = "login_function.php";
+        }
+        else {
+            console.log("OH NO ");
+            prompt_form_button(0);
+        }
+        form.submit();
+    }
+    else{
+        console.log("prompt_num",prompt_num.toString());
+        console.log("prompted_num",prompted_num.toString());
+        prompted_num = prompt_num;
+
+        if(prompt_num == 0){
+            nameField.style.maxHeight = "60px";
+            emailField.style.maxHeight = "60px";
+            phoneField.style.maxHeight = "60px";
+            confirmField.style.maxHeight = "60px";
+            title.innerHTML = "Sign Up";
+            signinBtn.classList.remove("disable");
+            signupBtn.classList.add("disable");
+        }
+        else if (prompt_num == 1){
+            nameField.style.maxHeight = "0";
+            emailField.style.maxHeight = "0";
+            phoneField.style.maxHeight = "0";
+            confirmField.style.maxHeight = "0";
+            title.innerHTML = "Sign In";
+            signinBtn.classList.add("disable");
+            signupBtn.classList.remove("disable");
+        }
+        else {
+            console.log("HOHOHOHO MY JAVASCRIPT IS DEAD IF THIS HAPPEN ");
+            prompt_form_button(0);           
+        }
+    }
+}
+
+
+
+</script>
+</body>
+</html>
